@@ -1,5 +1,8 @@
 # Set up the prompt
 
+# ensure dotfiles bin directory is loaded first                                  
+export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -19,8 +22,9 @@ antigen bundle sudo
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
-export NVM_DIR="/home/andries/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 fortune | cowsay
+
 
