@@ -1,11 +1,32 @@
-# Set up the prompt
+# completion
+autoload -U compinit
+compinit
 
-# ensure dotfiles bin directory is loaded first                                  
-export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+# load custom executable functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+# makes color constants available
+autoload -U colors
+colors
+
+# enable colored output from ls, etc
+export CLICOLOR=1
+export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+
+# history settings
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
+
+# awesome cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
+
+# Enable extended globbing
+setopt extendedglob
 
 source "$HOME/.antigen/antigen.zsh"
 
@@ -22,9 +43,10 @@ antigen bundle sudo
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# Include aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
+# Include local zsh config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 fortune | cowsay
-
-
