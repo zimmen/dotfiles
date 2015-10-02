@@ -47,7 +47,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
-
 # Include aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
