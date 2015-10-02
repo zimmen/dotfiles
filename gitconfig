@@ -84,9 +84,28 @@
   attributesfile = ~/.gitattributes
   excludesfile = ~/.gitignore
   autocrlf = input
+  # insanely beautiful diffs
+  pager = zsh -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[color "diff-highlight"]
+    oldNormal = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
 [merge "pofile"]
   name = custom merge driver for gettext po files
   driver = git-po-merge %A %O %B
 [include]
   path = ~/.gitconfig.local
-
