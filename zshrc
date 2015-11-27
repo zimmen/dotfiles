@@ -7,6 +7,9 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
+# ensure dotfiles bin directory is loaded first                                  
+export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH"
+
 # makes color constants available
 autoload -U colors
 colors
@@ -44,6 +47,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Include local zsh config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Include aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 antigen apply
 

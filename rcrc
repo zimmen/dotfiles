@@ -1,2 +1,1 @@
-EXCLUDES="Dotfiles.sublime-project"
 DOTFILES_DIRS="$HOME/dotfiles-local $HOME/dotfiles"
