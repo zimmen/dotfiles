@@ -1,3 +1,5 @@
+call pathogen#incubate()
+
 " Leader
 let mapleader = " "
 
@@ -39,6 +41,20 @@ set numberwidth=5
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+filetype plugin indent on
+
+:set t_Co=256 " 256 colors
+:set background=dark
+:color grb256
+
+:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
