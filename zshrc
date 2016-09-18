@@ -44,17 +44,14 @@ antigen bundle npm
 antigen bundle vagrant
 antigen bundle sudo
 antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Include local zsh config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# Include aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
-
 antigen apply
 
+# Include local zsh config
+source ~/.zshrc.local
+
 # Include aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 fortune | cowsay
