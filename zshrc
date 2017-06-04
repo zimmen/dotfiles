@@ -33,9 +33,9 @@ setopt extendedglob
 
 source "$HOME/.antigen/antigen.zsh"
 
-antigen-use oh-my-zsh
+antigen use oh-my-zsh
 antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen-bundle arialdomartini/oh-my-git
+antigen bundle arialdomartini/oh-my-git
 antigen bundle akoenig/gulp.plugin.zsh
 antigen theme ys
 antigen bundle git

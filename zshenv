@@ -14,7 +14,7 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH"
 
 # load custom executable functions
-source ~/.zsh/functions/strip_diff_leading_symbols
+#source ~/.zsh/functions/strip_diff_leading_symbols
 
 # generic colouriser
 GRC=`which grc`
