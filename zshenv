@@ -1,3 +1,7 @@
+# completion
+autoload -Uz compinit
+compinit
+
 # use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -14,7 +18,9 @@ export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH"
 
 # load custom executable functions
-#source ~/.zsh/functions/strip_diff_leading_symbols
+for function in ~/.zsh/functions/*; do
+  source $function
+done
 
 # generic colouriser
 GRC=`which grc`

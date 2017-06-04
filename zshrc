@@ -1,23 +1,3 @@
-# completion
-autoload -Uz compinit
-compinit
-
-# load custom executable functions
-for function in ~/.zsh/functions/*; do
-  source $function
-done
-
-# ensure dotfiles bin directory is loaded first                                  
-export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH"
-
-# makes color constants available
-autoload -U colors
-colors
-
-# enable colored output from ls, etc
-export CLICOLOR=1
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-
 # history settings
 setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zhistory
